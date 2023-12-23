@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+}
+main {
+    font-size: 1.6rem;
+}
+ul {
+    list-style: none;
+}
+/*Hero Section
+    Header
+*/
+
+.hero-section-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 70vh;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding-top: 4rem;
+    text-align: center;
+    gap: 1.5rem;
+    align-items: center;
+    font-family: Roboto,serif;
+}
+header {
+    font-family: 'Hedvig Letters Serif', serif;
+    width: 100%;
+}
+h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    right: 2px;
+}
+h1::before {
+    content: "W";
+    font-size: 3.6rem;
+    font-family: serif;
+    font-weight: 500;
+    position: relative;
+    left: 4px;
+}
+h1::after {
+    content: "A";
+    font-size: 3.6rem;
+    font-weight: 500;
+    position: relative;
+    top: .6px
+}
+header span {
+    font-size: 1.5rem;
+}
+/*Wikipedia logo and list languages */
+.hero-main-content {
+    min-width: 100%;
+    display: flex;
+}
+.hero-main-content figure{
+    margin: auto 0;
+    min-width: 40%;
+}
+.hero-main-content figure img{
+    width: 100%;
+    max-width: 200px;
+} 
+.language-list {
+    display: flex;
+    flex-direction: column;
+    min-height: 30%;
+}
+.language-list li{
+    margin: 13px 10px;
+    height: 25%;
+    position: relative;
+    letter-spacing: 1px;
+}
+/*left list*/
+.language-list.left li:nth-child(1){
+    left: 8rem;
+}
+.language-list.left li:nth-child(2){
+    left: 3rem;
+}
+.language-list.left li:nth-child(3){
+    left: 2rem;
+}
+.language-list.left li:nth-child(4){
+    left: 3.5rem;
+}
+.language-list.left li:nth-child(5){
+    left: 9rem;
+}
+/*righ list*/
+.language-list.right li:nth-child(1){
+    right: 8rem;
+}
+.language-list.right li:nth-child(2){
+    right: 3rem;
+}
+.language-list.right li:nth-child(3){
+    right: 2rem;
+}
+.language-list.right li:nth-child(4){
+    right: 3.5rem;
+}
+.language-list.right li:nth-child(5){
+    right: 9rem;
+}
+.language-list li a {
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+    color: #36c;
+}
+.language-list li a:hover{
+    background-color: rgba(223, 224, 227, 0.955);
+    text-decoration: underline;
+}
+.language-list li a > span{
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: gray;
+}
+/*Search bar*/
+.search-bar-container {
+    display: flex;
+    border: 1px solid gray;
+}
+.search-bar-container label {
+    display: none;
+}
+.search-bar-container input{
+    width: 33rem;
+    height: 4rem;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+}
+.search-bar-container:hover{
+    border: 2px solid #36c;
+    box-shadow: inset 0px 1px 2px 0px #34425e;
+}
+.select-input-language-container {
+    position: relative;
+    top: 1rem;
+    left: -0.5rem;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    padding-left: 5px;
+}
+.select-input-language-container:hover {
+    background-color: rgba(237, 237, 238, 0.955);
+}  
+.select-input-language-container span.select-input-language {
+    font-size: 1.2rem;
+    color: gray;
+} 
+.select-input-language-option {
+    background-image: url("https://cdn.icon-icons.com/icons2/3391/PNG/512/small_down_icon_213370.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+
+.search-icon-container {
+    background-color: #36c;
+    position: relative;
+    width: 5rem;
+    height: 4rem;
+}
+.search-icon-container img {
+    width: 20px;
+    height: 100%;
+    object-fit: contain;
+}
+/*Wikipedia botton language*/
+.select-wikipedia-language-container, .primary-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.horizontal-bar.small {
+    border: 0.5px solid rgb(200, 200, 200);
+    width: 8rem;
+    margin: 2rem 10px 0;
+}
+.horizontal-bar.large {
+    border-bottom: 1px solid rgb(213, 213, 213);
+    width: 95%;
+    margin: 3rem auto 0;
+}
+.primary-button-container div {
+    position: relative;
+}
+.translate-icon {
+    background-image: url("https://static-00.iconduck.com/assets.00/translate-icon-256x256-w8ius5w9.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+}
+.select-wikipedia-language-container button{
+    width: 25rem;
+    padding: 7px 5px;
+    margin-top: 15px;
+    border: 1px solid gray;
+    color: #36c;
+    background: #f7f7f7;
+    font-weight: 600;
+}
+.select-wikipedia-language-container button:hover{
+    background: #ffffff;
+}
