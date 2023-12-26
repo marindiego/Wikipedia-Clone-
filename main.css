@@ -207,7 +207,7 @@ header span {
 .horizontal-bar.large {
     border-bottom: 1px solid rgb(213, 213, 213);
     width: 95%;
-    margin: 3rem auto 2rem;
+    margin: 3rem auto 0rem;
 }
 .horizontal-bar.large:last-of-type {
     margin-top: 1rem;
@@ -237,19 +237,20 @@ header span {
 /*main section*/
 .main-section-container {
     display: grid;
-    grid-template-columns: 35rem 1fr;
-    min-width: 100%;
+    grid-template-columns: minmax(30%,35rem) 1fr;
+    max-width: 115rem;
     min-height: 67vh;
-    padding: 2rem 8rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;
     font-family: Roboto,serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #34425e;
 }
-.main-section-container a {
+.main-section-container a , .footer-items-list-container ul li a{
     text-decoration: none;
     color: #36c;
 }
-.main-section-container .fundation-info-container a:hover {
+.main-section-container .fundation-info-container a:hover, .footer-items-list-container ul li a:hover {
     text-decoration: underline;
 }
 .main-section-container img{
@@ -266,13 +267,12 @@ header span {
 .wikipedia-info-main-container {
     display: grid;
     align-items: start;
-    grid-template-rows: 16rem 1fr;
+    grid-template-rows: min-content;
     text-align: left;
     line-height: 1.7;
 }
 .fundation-info-container, .download-wikipedia-container{
     display: flex;
-    align-items: flex-start;
     flex-direction: row;
     align-items: start;
     padding: 1.5rem 3rem 1.5rem 1.6rem;
@@ -285,13 +285,14 @@ header span {
 .download-wikipedia-container {
     background: #f7f7f7;
 }
-.download-wikipedia-container-flex {
+.download-wikipedia-info-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 .buttons-app-container-flex {
     display: flex;
+    flex-wrap: wrap;
     min-width: 100%;
     min-height: 4rem;
 }
@@ -314,16 +315,16 @@ header span {
 /*aside main*/
 .wikipedia-items-list-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: minmax(auto,1fr) minmax(auto,1fr) minmax(auto,1fr);;
     min-height: 100%;
-    margin-left: 2rem;
+    margin-left: calc(5vw - 4rem);
 }
 .wikipedia-item-list {
     display: flex;
     align-items: center;
-    padding: 1.5rem 1.7rem 1.5rem 2rem;;
+    padding: 1.5rem calc(0.8rem + 1vw) 1.5rem;
     gap: 6px;
-    margin: 0 1rem;
+    margin: 0 .4rem;
 }
 .wikipedia-item-list .item-list-title-content-container{
     padding: 0.5rem 0.2rem;
@@ -337,11 +338,31 @@ header span {
 }
 .wikipedia-item-list a {
     font-size: 1.4rem;
+} 
+
+/*footer*/
+.footer-items-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-family: Roboto,serif;
+    gap: 0.5rem;
+    padding: 1.5rem;
 }
-footer 
-.get-wikipedia-app-button-playstore{
-    min-width: 100%;
-    min-height: 5vh;
+.footer-items-list-container ul  {
+    list-style: outside;
+}
+.footer-items-list-container ul li:first-child {
+    list-style: none;
+}
+.footer-items-list-container ul li a{
+    color: #36c;
+}
+.footer-items-list-container ul {
+    display: flex;
+    gap: 2rem;
 }
 @media screen and (max-width: 520px) {
     html {
@@ -367,5 +388,32 @@ footer
     }
     .search-bar-container {
         order: 1;
+    }
+    .wikipedia-items-list-container {
+        grid-template-columns: repeat(2,1fr);
     }  
+}
+@media screen and (max-width: 780px) {
+    .main-section-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .wikipedia-info-main-container {
+        text-align: center;
+    }
+    .buttons-app-container-flex {
+        justify-content: center;
+    }
+    .fundation-info-container, .download-wikipedia-container {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .wikipedia-logo-mini-container {
+        position: absolute;
+        left: calc(51vw - 20rem);
+        top: 4px;
+        display: ta;
+    }
 }
