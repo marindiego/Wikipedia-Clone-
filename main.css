@@ -32,6 +32,7 @@ ul {
 header {
     font-family: 'Hedvig Letters Serif', serif;
     width: 100%;
+    order: 1;
 }
 h1 {
     font-size: 2.4rem;
@@ -61,8 +62,10 @@ header span {
 }
 /*Wikipedia logo and list languages */
 .hero-main-content {
-    min-width: 100%;
     display: flex;
+    justify-content: center;
+    min-width: 100%;
+    order: 2;
 }
 .hero-main-content figure{
     margin: auto 0;
@@ -75,7 +78,6 @@ header span {
 .language-list {
     display: flex;
     flex-direction: column;
-    min-height: 30%;
 }
 .language-list li{
     margin: 13px 10px;
@@ -136,6 +138,7 @@ header span {
 .search-bar-container {
     display: flex;
     border: 1px solid gray;
+    order: 3;
 }
 .search-bar-container label {
     display: none;
@@ -180,6 +183,7 @@ header span {
     position: relative;
     width: 5rem;
     height: 4rem;
+    order: 3;
 }
 .search-icon-container img {
     width: 20px;
@@ -187,6 +191,9 @@ header span {
     object-fit: contain;
 }
 /*Wikipedia botton language*/
+.select-wikipedia-language-container {
+    order: 4;
+}
 .select-wikipedia-language-container, .primary-button-container {
     display: flex;
     align-items: center;
@@ -200,7 +207,10 @@ header span {
 .horizontal-bar.large {
     border-bottom: 1px solid rgb(213, 213, 213);
     width: 95%;
-    margin: 3rem auto 0;
+    margin: 3rem auto 2rem;
+}
+.horizontal-bar.large:last-of-type {
+    margin-top: 1rem;
 }
 .primary-button-container div {
     position: relative;
@@ -213,7 +223,7 @@ header span {
     height: 15px;
 }
 .select-wikipedia-language-container button{
-    width: 25rem;
+    min-width: 25rem;
     padding: 7px 5px;
     margin-top: 15px;
     border: 1px solid gray;
@@ -223,4 +233,139 @@ header span {
 }
 .select-wikipedia-language-container button:hover{
     background: #ffffff;
+}
+/*main section*/
+.main-section-container {
+    display: grid;
+    grid-template-columns: 35rem 1fr;
+    min-width: 100%;
+    min-height: 67vh;
+    padding: 2rem 8rem;
+    font-family: Roboto,serif;
+    font-size: 1.2rem;
+    color: #34425e;
+}
+.main-section-container a {
+    text-decoration: none;
+    color: #36c;
+}
+.main-section-container .fundation-info-container a:hover {
+    text-decoration: underline;
+}
+.main-section-container img{
+    max-width: 40px;
+}
+.wikipedia-logo-mini-container {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 4px gray;
+    border-radius: 7px;
+}
+.wikipedia-logo-mini-container img {
+    transform: translateY(5px);
+}
+.wikipedia-info-main-container {
+    display: grid;
+    align-items: start;
+    grid-template-rows: 16rem 1fr;
+    text-align: left;
+    line-height: 1.7;
+}
+.fundation-info-container, .download-wikipedia-container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    align-items: start;
+    padding: 1.5rem 3rem 1.5rem 1.6rem;
+    gap: 13px;
+}
+.bold.gray {
+    font-weight: 600;
+    color: #34425e;
+}
+.download-wikipedia-container {
+    background: #f7f7f7;
+}
+.download-wikipedia-container-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.buttons-app-container-flex {
+    display: flex;
+    min-width: 100%;
+    min-height: 4rem;
+}
+.get-wikipedia-app-button-playstore {
+    background-image: url(https://play.google.com/intl/es-419/badges/static/images/badges/es-419_badge_web_generic.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40px;
+    min-width: 102px;
+    display: inline-block;
+}
+.get-wikipedia-aap-button-appstore {
+    background-image: url(https://w7.pngwing.com/pngs/1015/380/png-transparent-app-store-logo-iphone-app-store-google-play-apple-app-store-electronics-text-logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40px;
+    min-width: 113px;
+    display: inline-block;
+}
+/*aside main*/
+.wikipedia-items-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100%;
+    margin-left: 2rem;
+}
+.wikipedia-item-list {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1.7rem 1.5rem 2rem;;
+    gap: 6px;
+    margin: 0 1rem;
+}
+.wikipedia-item-list .item-list-title-content-container{
+    padding: 0.5rem 0.2rem;
+}
+.wikipedia-item-list:hover {
+    background: #f7f7f7;
+}
+.wikipedia-item-list p{
+    margin-top: 0.3rem;
+    line-height: 1.5;
+}
+.wikipedia-item-list a {
+    font-size: 1.4rem;
+}
+footer 
+.get-wikipedia-app-button-playstore{
+    min-width: 100%;
+    min-height: 5vh;
+}
+@media screen and (max-width: 520px) {
+    html {
+        font-size: 8.5px;
+    }
+    .hero-main-content figure {
+        position: absolute;
+        top: 45px;
+        right: 68vw;
+        min-width: 55px;
+    }
+    .hero-main-content figure img {
+        max-width: 55px;
+    }
+    .hero-main-content {
+        flex-direction: row;    
+    }
+    .language-list li{
+        position: static;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 7rem;
+    }
+    .search-bar-container {
+        order: 1;
+    }  
 }
